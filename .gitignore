@@ -1,6 +1,18 @@
+# Secrets & environment
 .env
+.env.*
+!.env.example
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
 .venv/
 dist/
 *.egg-info/
+
+# Keys & credentials
+*.pem
+*.key
+*.p12
+*.pfx
