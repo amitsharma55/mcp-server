@@ -227,6 +227,45 @@ Assistant: Bitcoin is at $70,487 USD, up 3.3% in the last 24h.
 
 ---
 
+## MCP Inspector (Debugging UI)
+
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) is the official interactive debugging tool for MCP servers. It provides a web UI to connect, list tools, call them, and inspect raw JSON-RPC messages.
+
+### Launch the Inspector
+
+No install needed — run it directly with `npx`:
+
+```bash
+npx @modelcontextprotocol/inspector
+```
+
+This opens a web UI at `http://localhost:6274`.
+
+### Connect to Your Server
+
+1. **Transport Type**: Select **Streamable HTTP**
+2. **URL**: `http://localhost:8000/mcp`
+3. **Authentication**: Add a header:
+   - **Header Name**: `Authorization`
+   - **Header Value**: `Bearer <your MCP_TOKEN from .env>`
+
+> **Important**: The token value must start with `Bearer ` (with a space) followed by your JWT token.
+
+4. Click **Connect**
+
+### What You Can Do
+
+- **List Tools** — view all registered tools (`get_weather`, `get_bitcoin_price`, etc.)
+- **Call Tools** — fill in arguments and execute tool calls interactively
+- **Inspect Messages** — view raw JSON-RPC request/response traffic
+- **Test Auth** — verify your JWT tokens are working correctly
+
+### Stop the Inspector
+
+Press `Ctrl+C` in the terminal where the inspector is running.
+
+---
+
 ## Docker (Optional)
 
 ### Build and run
